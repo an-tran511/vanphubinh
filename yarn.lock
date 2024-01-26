@@ -31,7 +31,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/application@npm:^8.0.0":
+"@adonisjs/application@npm:^8.0.2":
   version: 8.0.2
   resolution: "@adonisjs/application@npm:8.0.2"
   dependencies:
@@ -98,7 +98,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/bodyparser@npm:^10.0.0":
+"@adonisjs/bodyparser@npm:^10.0.1":
   version: 10.0.1
   resolution: "@adonisjs/bodyparser@npm:10.0.1"
   dependencies:
@@ -119,7 +119,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/config@npm:^5.0.0":
+"@adonisjs/config@npm:^5.0.1":
   version: 5.0.1
   resolution: "@adonisjs/config@npm:5.0.1"
   dependencies:
@@ -128,22 +128,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/core@npm:^6.2.1":
-  version: 6.2.1
-  resolution: "@adonisjs/core@npm:6.2.1"
+"@adonisjs/core@npm:^6.2.2":
+  version: 6.2.2
+  resolution: "@adonisjs/core@npm:6.2.2"
   dependencies:
     "@adonisjs/ace": "npm:^13.0.0"
-    "@adonisjs/application": "npm:^8.0.0"
-    "@adonisjs/bodyparser": "npm:^10.0.0"
-    "@adonisjs/config": "npm:^5.0.0"
-    "@adonisjs/encryption": "npm:^6.0.0"
-    "@adonisjs/env": "npm:^5.0.0"
-    "@adonisjs/events": "npm:^9.0.0"
-    "@adonisjs/fold": "npm:^10.0.0"
-    "@adonisjs/hash": "npm:^9.0.0"
-    "@adonisjs/http-server": "npm:^7.0.1"
-    "@adonisjs/logger": "npm:^6.0.0"
-    "@adonisjs/repl": "npm:^4.0.0"
+    "@adonisjs/application": "npm:^8.0.2"
+    "@adonisjs/bodyparser": "npm:^10.0.1"
+    "@adonisjs/config": "npm:^5.0.1"
+    "@adonisjs/encryption": "npm:^6.0.1"
+    "@adonisjs/env": "npm:^5.0.1"
+    "@adonisjs/events": "npm:^9.0.1"
+    "@adonisjs/fold": "npm:^10.0.1"
+    "@adonisjs/hash": "npm:^9.0.1"
+    "@adonisjs/http-server": "npm:^7.0.2"
+    "@adonisjs/logger": "npm:^6.0.1"
+    "@adonisjs/repl": "npm:^4.0.1"
     "@paralleldrive/cuid2": "npm:^2.2.2"
     "@poppinss/macroable": "npm:^1.0.1"
     "@poppinss/utils": "npm:^6.7.1"
@@ -156,7 +156,7 @@ __metadata:
     youch: "npm:^3.3.2"
     youch-terminal: "npm:^2.2.3"
   peerDependencies:
-    "@adonisjs/assembler": ^7.0.0
+    "@adonisjs/assembler": ^7.1.0
     "@vinejs/vine": ^1.7.0
     argon2: ^0.31.1
     bcrypt: ^5.1.1
@@ -174,7 +174,7 @@ __metadata:
       optional: true
   bin:
     adonis-kit: build/toolkit/main.js
-  checksum: 7ead5b245070bb032426bcb2e817f38cd8c0475905788343cdb0b1d9351c0b9737c1ae7244f6c6ead8a26682ed192e9038060e268af81c925a3ec06dac3997de
+  checksum: 4b4c9cce60bae58cf572262e0d6b7d28fdd14e2eaf9ebb26fa53f321cd91412499305a781b6b44043de64aa757c99b9f8c974c73fa50e47ba987a7daba1e0867
   languageName: node
   linkType: hard
 
@@ -187,7 +187,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/encryption@npm:^6.0.0":
+"@adonisjs/encryption@npm:^6.0.1":
   version: 6.0.1
   resolution: "@adonisjs/encryption@npm:6.0.1"
   dependencies:
@@ -196,7 +196,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/env@npm:^5.0.0":
+"@adonisjs/env@npm:^5.0.0, @adonisjs/env@npm:^5.0.1":
   version: 5.0.1
   resolution: "@adonisjs/env@npm:5.0.1"
   dependencies:
@@ -236,7 +236,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/events@npm:^9.0.0":
+"@adonisjs/events@npm:^9.0.1":
   version: 9.0.1
   resolution: "@adonisjs/events@npm:9.0.1"
   dependencies:
@@ -250,7 +250,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/fold@npm:^10.0.0":
+"@adonisjs/fold@npm:^10.0.1":
   version: 10.0.1
   resolution: "@adonisjs/fold@npm:10.0.1"
   dependencies:
@@ -259,7 +259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/hash@npm:^9.0.0":
+"@adonisjs/hash@npm:^9.0.1":
   version: 9.0.1
   resolution: "@adonisjs/hash@npm:9.0.1"
   dependencies:
@@ -277,7 +277,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/http-server@npm:^7.0.1":
+"@adonisjs/http-server@npm:^7.0.2":
   version: 7.0.2
   resolution: "@adonisjs/http-server@npm:7.0.2"
   dependencies:
@@ -312,7 +312,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/logger@npm:^6.0.0":
+"@adonisjs/logger@npm:^6.0.1":
   version: 6.0.1
   resolution: "@adonisjs/logger@npm:6.0.1"
   dependencies:
@@ -376,7 +376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adonisjs/repl@npm:^4.0.0":
+"@adonisjs/repl@npm:^4.0.1":
   version: 4.0.1
   resolution: "@adonisjs/repl@npm:4.0.1"
   dependencies:
@@ -5918,7 +5918,7 @@ __metadata:
   dependencies:
     "@adonisjs/assembler": "npm:^7.1.0"
     "@adonisjs/auth": "npm:^9.0.3"
-    "@adonisjs/core": "npm:^6.2.1"
+    "@adonisjs/core": "npm:^6.2.2"
     "@adonisjs/cors": "npm:^2.2.1"
     "@adonisjs/eslint-config": "npm:^1.2.1"
     "@adonisjs/lucid": "npm:^20.0.0"
