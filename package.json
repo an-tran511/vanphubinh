@@ -7,7 +7,7 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "libs/*"
   ],
   "packageManager": "yarn@4.0.2",
   "devDependencies": {
