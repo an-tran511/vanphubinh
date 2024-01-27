@@ -4,7 +4,7 @@ import { FileRoute, useNavigate } from '@tanstack/react-router'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useRef } from 'react'
 import { TPackageAndLabel, TPackageAndLabelMutation } from 'types'
-import { createPackageAndLabel } from '@apis/package-and-label'
+import { createPackageAndLabel } from '@/apis/package-and-label'
 import { toast } from 'sonner'
 import { PackageAndLabelForm } from './-components/package-and-label-form'
 

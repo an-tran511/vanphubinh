@@ -1,15 +1,15 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { FileRoute, useNavigate } from '@tanstack/react-router'
 import { DataTable } from 'mantine-datatable'
-import { List } from '@components/crud/list'
+import { List } from '@/components/crud/list'
 import { useDebouncedValue, useDisclosure } from '@mantine/hooks'
 import { Badge, Drawer, Group } from '@mantine/core'
 import { PartnerCreate } from './-components/create'
 import { z } from 'zod'
-import classes from '@components/table/Table.module.css'
+import classes from '@/components/table/Table.module.css'
 import { useEffect, useState } from 'react'
-import { partnersQueryOptions } from '@apis/query-options'
-import { ListResponse } from '@types/response'
+import { partnersQueryOptions } from '@/apis/query-options'
+import { ListResponse } from '@/types/response'
 
 const partnerSearchSchema = z.object({
   page: z.number().catch(1),

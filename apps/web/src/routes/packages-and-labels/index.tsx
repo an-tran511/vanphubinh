@@ -7,7 +7,7 @@ import { ActionIcon, Box, Group, TextInput } from '@mantine/core'
 import { z } from 'zod'
 import classes from '@/components/table/Table.module.css'
 import { useState } from 'react'
-import { packagesAndLabelsQueryOptions } from '@apis/query-options'
+import { packagesAndLabelsQueryOptions } from '@/apis/query-options'
 import { Eye, Trash } from '@phosphor-icons/react'
 
 const packageSearchSchema = z.object({
