@@ -1,14 +1,18 @@
 import { Form, FormInstance } from 'houseform'
 import { Create } from '@/components/crud/create'
-import { FileRoute, useNavigate } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useRef } from 'react'
-import { TPackageAndLabel, TPackageAndLabelMutation } from 'types'
+import {
+  TPackageAndLabel,
+  TPackageAndLabelMutation,
+} from 'types/package-and-label'
 import { createPackageAndLabel } from '@/apis/package-and-label'
 import { toast } from 'sonner'
 import { PackageAndLabelForm } from './-components/package-and-label-form'
 
-export const Route = new FileRoute('/packages-and-labels/create').createRoute({
+export const Route = createFileRoute('/packages-and-labels/create')({
+  wrapInSuspense: true,
   component: CreateComponent,
 })
 
@@ -41,7 +45,7 @@ export function CreateComponent() {
     >
       {() => (
         <Create
-          title="Thêm sản phẩm bao bì"
+          title="Bao bì & nhãn mác"
           submitHandler={doSubmit}
           savingState={mutation.isPending}
         >

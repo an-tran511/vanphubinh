@@ -113,35 +113,41 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
 
   return (
     <Card shadow="0" radius="0" px="xl">
-      <Group justify="space-between" align="flex-start">
-        <Field
-          name="name"
-          initialValue={data && data.name}
-          onChangeValidate={z.string().min(1, { message: 'Trường bắt buộc' })}
-        >
-          {({ value, setValue, onBlur, errors }) => (
-            <Textarea
-              autosize
-              ref={focusTrapRef}
-              minRows={1}
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              onBlur={onBlur}
-              required
-              aria-required
-              error={errors?.[0]}
-              radius="md"
-              variant="unstyled"
-              label="Tên hàng hoá"
-              styles={{
-                input: {
-                  fontSize: '1.5rem',
+      <Field
+        name="name"
+        initialValue={data && data.name}
+        onChangeValidate={z.string().min(1, { message: 'Trường bắt buộc' })}
+      >
+        {({ value, setValue, onBlur, errors }) => (
+          <Textarea
+            autosize
+            ref={focusTrapRef}
+            minRows={1}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            onBlur={onBlur}
+            required
+            aria-required
+            error={errors?.[0]}
+            radius="md"
+            variant="unstyled"
+            label="Tên hàng hoá"
+            styles={{
+              input: {
+                fontSize: '1.5rem',
+                '&[data-error]': {
+                  border: '5px solid green',
                 },
-              }}
-            />
-          )}
-        </Field>
-      </Group>
+              },
+              wrapper: {
+                '&[data-error]': {
+                  border: '5px solid green',
+                },
+              },
+            }}
+          />
+        )}
+      </Field>
       <Tabs defaultValue="info">
         <Tabs.List>
           <Tabs.Tab value="info" leftSection={<Info size={16} />}>
@@ -313,7 +319,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
                       )}
                     </Field>
                   </SimpleGrid>
-                  <Stack gap={2}>
+                  {/* <Stack gap={2}>
                     <Text fw="500" size="sm">
                       Hình ảnh (tối đa 3 ảnh)
                     </Text>
@@ -352,7 +358,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
                         src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
                       />
                     </Group>
-                  </Stack>
+                  </Stack> */}
                   <Field name="note" initialValue={data && data.note}>
                     {({ value, setValue, onBlur, errors }) => (
                       <Textarea
@@ -364,6 +370,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
                         error={errors?.[0]}
                         radius="md"
                         label="Ghi chú"
+                        placeholder="Ghi chú cho sản phẩm"
                       />
                     )}
                   </Field>
@@ -433,6 +440,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
                           value={value}
                           onChange={(val) => setValue(val as number)}
                           onBlur={onBlur}
+                          hideControls
                         />
                       )}
                     </Field>
@@ -448,6 +456,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
                           value={value}
                           onChange={(val) => setValue(val as number)}
                           onBlur={onBlur}
+                          hideControls
                         />
                       )}
                     </Field>
@@ -458,11 +467,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
           </Accordion>
         </Tabs.Panel>
         <Tabs.Panel value="cylinder">
-          <Text fw="500" size="sm" py="sm">
-            Trục
-          </Text>
-
-          <Stack gap="sm">
+          <Stack gap="sm" mt="sm">
             <SimpleGrid
               cols={{ base: 1, md: 2 }}
               spacing={{ base: 10, sm: 'xl' }}
@@ -489,6 +494,38 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
                     value={value}
                     onChange={(val) => setValue(val as number)}
                     onBlur={onBlur}
+                    hideControls
+                  />
+                )}
+              </Field>
+            </SimpleGrid>
+            <SimpleGrid
+              cols={{ base: 1, md: 2 }}
+              spacing={{ base: 10, sm: 'xl' }}
+              verticalSpacing="md"
+            >
+              <Field name="cylinder.location">
+                {({ value, setValue, onBlur }) => (
+                  <TextInput
+                    radius="md"
+                    label="Vị trí trục"
+                    size="sm"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    onBlur={onBlur}
+                  />
+                )}
+              </Field>
+
+              <Field name="cylinder.itemCode">
+                {({ value, setValue, onBlur }) => (
+                  <TextInput
+                    radius="md"
+                    label="Mã trục"
+                    size="sm"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    onBlur={onBlur}
                   />
                 )}
               </Field>
@@ -510,18 +547,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
                     value={value}
                     onChange={(val) => setValue(val as number)}
                     onBlur={onBlur}
-                  />
-                )}
-              </Field>
-              <Field name="cylinder.itemCode">
-                {({ value, setValue, onBlur }) => (
-                  <TextInput
-                    radius="md"
-                    label="Mã trục"
-                    size="sm"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    onBlur={onBlur}
+                    hideControls
                   />
                 )}
               </Field>

@@ -1,4 +1,4 @@
-import { FileRoute, useNavigate, useParams } from '@tanstack/react-router'
+import { createFileRoute, useNavigate, useParams } from '@tanstack/react-router'
 import { TPackageAndLabelQueryOptions } from '@/apis/query-options'
 import {
   useMutation,
@@ -16,7 +16,7 @@ import { toast } from 'sonner'
 import { createPackageAndLabel } from '@/apis/package-and-label'
 import { useRef } from 'react'
 
-export const Route = new FileRoute('/packages-and-labels/$id').createRoute({
+export const Route = createFileRoute('/packages-and-labels/$id')({
   component: DetailComponent,
   errorComponent: () => <div>error</div>,
   loader: ({ context: { queryClient }, params }) => {

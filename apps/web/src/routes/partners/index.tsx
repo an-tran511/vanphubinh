@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { FileRoute, useNavigate } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { DataTable } from 'mantine-datatable'
 import { List } from '@/components/crud/list'
 import { useDebouncedValue, useDisclosure } from '@mantine/hooks'
@@ -9,7 +9,8 @@ import { z } from 'zod'
 import classes from '@/components/table/Table.module.css'
 import { useEffect, useState } from 'react'
 import { partnersQueryOptions } from '@/apis/query-options'
-import { ListResponse } from '@/types/response'
+import { TListResponse } from 'types/http'
+import { TPartner } from 'types/partner'
 
 const partnerSearchSchema = z.object({
   page: z.number().catch(1),
@@ -18,7 +19,7 @@ const partnerSearchSchema = z.object({
   // sort: z.enum(['newest', 'oldest', 'price']).catch('newest'),
 })
 
-export const Route = new FileRoute('/partners/').createRoute({
+export const Route = createFileRoute('/partners/')({
   component: DashboardComponent,
   validateSearch: partnerSearchSchema,
   preSearchFilters: [
@@ -42,7 +43,7 @@ function DashboardComponent() {
 
   useEffect(() => {
     navigate({
-      search: (old) => {
+      search: (old: any) => {
         return {
           ...old,
           searchValue: debouncedSearchValueDraft,
@@ -58,7 +59,7 @@ function DashboardComponent() {
       deps: { page, searchValue: debouncedSearchValueDraft },
     }),
   )
-  const partnerResponse = postsQuery.data as ListResponse<Partner>
+  const partnerResponse = postsQuery.data as TListResponse<TPartner>
   const partners = partnerResponse.data
   const meta = partnerResponse.meta
   const isLoading = postsQuery.isFetching || postsQuery.isLoading
@@ -86,7 +87,7 @@ function DashboardComponent() {
     {
       accessor: '',
       title: 'Loại đối tác',
-      render: (record: Partner) => {
+      render: (record: TPartner) => {
         return (
           <Group gap="xs">
             {record.isCustomer ? (
@@ -125,7 +126,7 @@ function DashboardComponent() {
     <List title="Đối tác" onCreateHandler={open} pagination={pagination}>
       {/* <Box px={{ base: 'md', md: 'lg' }} py="md" bg="white">
         <Group justify="space-between">
-          <TextInput
+          <TextInput 
             variant="default"
             placeholder="Tìm kiếm"
             value={searchValueDraft}

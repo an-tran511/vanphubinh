@@ -142,7 +142,6 @@ function ListComponent() {
       <Box py="md" px="xl" bg="white">
         <Group>
           <TextInput
-            variant="default"
             visibleFrom="md"
             radius="md"
             placeholder="Tìm kiếm"
@@ -153,7 +152,6 @@ function ListComponent() {
             size="xs"
             hiddenFrom="md"
             radius="md"
-            variant="default"
             placeholder="Tìm kiếm"
             value={searchValueDraft}
             onChange={(event) => setSearchValueDraft(event.currentTarget.value)}

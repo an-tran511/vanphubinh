@@ -66,7 +66,7 @@ export const List = (props: ListProps) => {
           <Group>
             <Title order={isTablet ? 4 : 2}>{title}</Title>
           </Group>
-          {/* <TextInput
+          {/* <TextInput variant="underline"
             visibleFrom="md"
             variant="default"
             leftSection={<MagnifyingGlass size={14} weight="bold" />}
@@ -94,7 +94,7 @@ export const List = (props: ListProps) => {
             )}
           </Group>
         </Group>
-        {/* <TextInput
+        {/* <TextInput variant="underline"
           mt="xs"
           variant="default"
           hiddenFrom="md"
