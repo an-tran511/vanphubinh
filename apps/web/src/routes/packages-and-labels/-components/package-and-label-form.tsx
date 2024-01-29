@@ -153,7 +153,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
           <Tabs.Tab value="info" leftSection={<Info size={16} />}>
             Thông tin chung
           </Tabs.Tab>
-          <Tabs.Tab value="cylinder" leftSection={<Cylinder size={16} />}>
+          <Tabs.Tab value="mould" leftSection={<Cylinder size={16} />}>
             Trục
           </Tabs.Tab>
         </Tabs.List>
@@ -466,14 +466,14 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
             </Accordion.Item>
           </Accordion>
         </Tabs.Panel>
-        <Tabs.Panel value="cylinder">
+        <Tabs.Panel value="mould">
           <Stack gap="sm" mt="sm">
             <SimpleGrid
               cols={{ base: 1, md: 2 }}
               spacing={{ base: 10, sm: 'xl' }}
               verticalSpacing="md"
             >
-              <Field name="cylinder.dimension">
+              <Field name="mould.dimension">
                 {({ value, setValue, onBlur }) => (
                   <TextInput
                     radius="md"
@@ -485,7 +485,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
                   />
                 )}
               </Field>
-              <Field name="cylinder.numberOfCylinders">
+              <Field name="mould.numberOfMoulds">
                 {({ value, setValue, onBlur }) => (
                   <NumberInput
                     radius="md"
@@ -504,7 +504,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
               spacing={{ base: 10, sm: 'xl' }}
               verticalSpacing="md"
             >
-              <Field name="cylinder.location">
+              <Field name="mould.location">
                 {({ value, setValue, onBlur }) => (
                   <TextInput
                     radius="md"
@@ -517,7 +517,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
                 )}
               </Field>
 
-              <Field name="cylinder.itemCode">
+              <Field name="mould.itemCode">
                 {({ value, setValue, onBlur }) => (
                   <TextInput
                     radius="md"
@@ -536,7 +536,7 @@ export const PackageAndLabelForm = (props: PackageAndLabelFormProps) => {
               verticalSpacing="md"
             >
               <Field
-                name="cylinder.cylinderMakerId"
+                name="mould.mouldMakerId"
                 initialValue={data && data.specs.thickness}
               >
                 {({ value, setValue, onBlur }) => (

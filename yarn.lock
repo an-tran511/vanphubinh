@@ -6382,7 +6382,7 @@ __metadata:
     prettier: "npm:^3.2.4"
     reflect-metadata: "npm:^0.2.1"
     ts-node: "npm:^10.9.2"
-    types: "workspace:*"
+    types: "workspace:^"
     typescript: "npm:^5.3.3"
   languageName: unknown
   linkType: soft
@@ -7122,7 +7122,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"types@workspace:*, types@workspace:^, types@workspace:libs/types":
+"types@workspace:^, types@workspace:libs/types":
   version: 0.0.0-use.local
   resolution: "types@workspace:libs/types"
   dependencies:

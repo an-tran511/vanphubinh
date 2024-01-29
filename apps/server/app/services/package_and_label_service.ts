@@ -1,5 +1,5 @@
 import PackageAndLabel from '#models/package_and_label'
-import { TPackageAndLabel, TPackageAndLabelMutation } from 'types/package-and-label'
+import { TPackageAndLabel, TPackageAndLabelMutation } from 'types/package-and-label.js'
 
 export class PackageAndLabelService {
   async find({
