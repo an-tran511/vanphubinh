@@ -9,17 +9,20 @@ import type { HttpContext } from '@adonisjs/core/http'
 export default class PackagesAndLabelsController {
   constructor(protected packageAndLabelService: PackageAndLabelService) {}
 
-  public async index({ request }: HttpContext) {
+  public async index({ request, response }: HttpContext) {
     const { page = 1, perPage = 30, searchValue = '' } = request.qs()
-    const items = await PackageAndLabel.query()
-      .preload('partner')
-      .withScopes((scopes) => scopes.search(searchValue))
-      .paginate(page, perPage)
+    const items = await this.packageAndLabelService
+      .find({ searchValue, page, perPage })
+      .catch((error) => {
+        return response.internalServerError(error)
+      })
     return items
   }
 
   public async show({ params, response }: HttpContext) {
-    const item = await PackageAndLabel.findOrFail(params.id)
+    const item = await this.packageAndLabelService.findById(params.id).catch((error) => {
+      return response.internalServerError(error)
+    })
     return item
   }
 

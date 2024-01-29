@@ -5,6 +5,10 @@
   "author": "An Tran",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "web:dev": "yarn workspace web dev",
+    "server:dev": "yarn workspace server dev"
+  },
   "workspaces": [
     "apps/*",
     "libs/*"

@@ -1,22 +1,29 @@
 import PackageAndLabel from '#models/package_and_label'
-import Partner from '#models/partner'
+import { TPackageAndLabel, TPackageAndLabelMutation } from 'types/package-and-label'
 
 export class PackageAndLabelService {
-  async store({
-    name,
-    note,
-    partnerId,
-    uomId,
-    categoryId,
-    specs,
+  async find({
+    searchValue,
+    page,
+    perPage,
   }: {
-    name: string
-    note: string | undefined
-    partnerId: number | undefined
-    uomId: number
-    categoryId: number | undefined
-    specs: object | undefined
+    searchValue: string
+    page: number
+    perPage: number
   }) {
+    const items = await PackageAndLabel.query()
+      .preload('partner')
+      .withScopes((scopes) => scopes.search(searchValue))
+      .paginate(page, perPage)
+    return items
+  }
+
+  async findById(id: number) {
+    const item = await PackageAndLabel.findOrFail(id)
+    return item
+  }
+
+  async store({ name, note, partnerId, uomId, categoryId, specs }: TPackageAndLabelMutation) {
     const packageAndLabel = await PackageAndLabel.create({
       name,
       note,
