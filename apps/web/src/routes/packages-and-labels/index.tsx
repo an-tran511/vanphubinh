@@ -75,7 +75,7 @@ function ListComponent() {
   const isLoading = packagesQuery.isFetching || packagesQuery.isLoading
   const columns = [
     {
-      accessor: 'itemCode',
+      accessor: 'id',
       title: 'Mã hàng hoá',
     },
     {

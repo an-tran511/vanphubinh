@@ -1511,6 +1511,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/router-generator@npm:1.14.1":
+  version: 1.14.1
+  resolution: "@tanstack/router-generator@npm:1.14.1"
+  dependencies:
+    prettier: "npm:^3.1.1"
+    zod: "npm:^3.22.4"
+  checksum: 87dfd84eff7e211f11c50954d6e4d2086b54aeabd601060a971f18bd200eed43530a7e7cded5a352d3bece3ca485fbadfd340d32e58f399ae9216bcd44bc5a8c
+  languageName: node
+  linkType: hard
+
+"@tanstack/router-vite-plugin@npm:^1.14.1":
+  version: 1.14.1
+  resolution: "@tanstack/router-vite-plugin@npm:1.14.1"
+  dependencies:
+    "@tanstack/router-generator": "npm:1.14.1"
+  checksum: 120eeb16ead220cb7a5eef5eedc3af1b301f9f8489cadc16561a382e4fd4233b2231831e10b5a962dbab63e582a119f89bc7ea742ca47c4d3b31ad381c8de364
+  languageName: node
+  linkType: hard
+
 "@tanstack/store@npm:0.1.3":
   version: 0.1.3
   resolution: "@tanstack/store@npm:0.1.3"
@@ -5733,7 +5752,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.2.4":
+"prettier@npm:^3.1.1, prettier@npm:^3.2.4":
   version: 3.2.4
   resolution: "prettier@npm:3.2.4"
   bin:
@@ -7405,6 +7424,7 @@ __metadata:
     "@phosphor-icons/react": "npm:2.0.15"
     "@tanstack/react-query": "npm:^5.17.19"
     "@tanstack/react-router": "npm:^1.13.0"
+    "@tanstack/router-vite-plugin": "npm:^1.14.1"
     "@types/react": "npm:^18.2.48"
     "@types/react-dom": "npm:^18.2.18"
     "@typescript-eslint/eslint-plugin": "npm:^6.19.1"
