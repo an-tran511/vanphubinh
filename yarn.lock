@@ -707,7 +707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@faker-js/faker@npm:^8.3.1":
+"@faker-js/faker@npm:^8.3.1, @faker-js/faker@npm:^8.4.0":
   version: 8.4.0
   resolution: "@faker-js/faker@npm:8.4.0"
   checksum: 2dd9a3f6a38a70baa8d8ae222d9d371eea2b56eba4bd12bb138230e9481687686330fddee7581d3f285cf8ea8fe1534e08e43a110de8743e561a6eccc3fdc670
@@ -6386,6 +6386,7 @@ __metadata:
     "@adonisjs/lucid": "npm:^20.0.0"
     "@adonisjs/prettier-config": "npm:^1.2.1"
     "@adonisjs/tsconfig": "npm:^1.2.1"
+    "@faker-js/faker": "npm:^8.4.0"
     "@japa/api-client": "npm:^2.0.2"
     "@japa/assert": "npm:^2.1.0"
     "@japa/plugin-adonisjs": "npm:^3.0.0"

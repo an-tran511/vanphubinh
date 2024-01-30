@@ -4,9 +4,7 @@ import { search } from '../utils/search.js'
 import AppBaseModel from '#models/app_base_model'
 
 export default class Uom extends AppBaseModel {
-  public static search = search(this, ['name'], {
-    name: (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, ''),
-  })
+  public static search = search(this, ['name'])
 
   @column({ isPrimary: true })
   declare id: number

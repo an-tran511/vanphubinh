@@ -16,6 +16,13 @@ export default class extends BaseSchema {
       table.boolean('is_stockable').defaultTo(true)
       table.string('note').nullable()
       table.jsonb('specs').nullable()
+      table
+        .enum('item_view_type', ['package_and_label', 'mould', 'other'], {
+          useNative: true,
+          enumName: 'item_view_type',
+          existingType: false,
+        })
+        .defaultTo('package_and_label')
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
       table.integer('mould_id').unsigned().references('items.id').nullable()
@@ -24,5 +31,6 @@ export default class extends BaseSchema {
 
   async down() {
     this.schema.dropTable(this.tableName)
+    this.schema.raw('DROP TYPE IF EXISTS "item_view_type"')
   }
 }

@@ -4,6 +4,7 @@ import { search } from '../utils/search.js'
 import AppBaseModel from '#models/app_base_model'
 import Partner from './partner.js'
 import { type BelongsTo } from '@adonisjs/lucid/types/relations'
+import { type ItemViewType } from 'types/item-type.js'
 
 export default class Item extends AppBaseModel {
   public static search = search(this, ['name'], {
@@ -45,6 +46,9 @@ export default class Item extends AppBaseModel {
 
   @column()
   declare isStockable: boolean
+
+  @column()
+  declare itemViewType: ItemViewType
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime

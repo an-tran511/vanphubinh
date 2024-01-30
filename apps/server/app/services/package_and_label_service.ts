@@ -1,10 +1,9 @@
 import PackageAndLabel from '#models/package_and_label'
-import { TPackageAndLabel, TPackageAndLabelMutation } from 'types/package-and-label.js'
+import { TPackageAndLabelMutation } from 'types/package-and-label.js'
 import { inject } from '@adonisjs/core'
 import { MouldService } from '#services/mould_service'
-import db from '@adonisjs/lucid/services/db'
-import Uom from '#models/uom'
-import Category from '#models/category'
+
+import { TransactionClientContract } from '@adonisjs/lucid/types/database'
 
 @inject()
 export class PackageAndLabelService {
@@ -31,47 +30,20 @@ export class PackageAndLabelService {
     return item
   }
 
-  async store({
-    name,
-    note,
-    partnerId,
-    uomId,
-    categoryId,
-    specs,
-    mould,
-  }: TPackageAndLabelMutation) {
-    return await db.transaction(async (trx) => {
-      const packageAndLabel = await PackageAndLabel.create(
-        {
-          name,
-          note,
-          uomId,
-          categoryId,
-          partnerId,
-          specs,
-        },
-        { client: trx }
-      )
-      if (mould) {
-        const mouldUom = await Uom.query({ client: trx }).where('name', 'cây').firstOrFail()
-        const mouldCategory = await Category.query({ client: trx })
-          .whereILike('name', 'Trục')
-          .firstOrFail()
+  async store(payload: TPackageAndLabelMutation, trx?: TransactionClientContract) {
+    const { name, note, partnerId, uomId, categoryId, specs } = payload
+    const packageAndLabel = await PackageAndLabel.create(
+      {
+        name,
+        note,
+        uomId,
+        categoryId,
+        partnerId,
+        specs,
+      },
+      { client: trx }
+    )
 
-        await packageAndLabel.related('moulds').create({
-          name,
-          partnerId,
-          uomId: mouldUom.id,
-          purchaseUomId: mouldUom.id,
-          categoryId: mouldCategory.id,
-          specs: mould,
-        }),
-          {
-            client: trx,
-          }
-      }
-
-      return packageAndLabel
-    })
+    return packageAndLabel
   }
 }
